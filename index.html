@@ -1,0 +1,263 @@
+<HTML>
+    <HEAD>
+        <META charset="UTF-8">
+        <META name="viewport" content="width=device-width, initial-scale=1">
+		<LINK href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <STYLE>
+            body::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .b-example-divider {
+                height: 3rem;
+                background-color: rgba(0, 0, 0, .1);
+                border: solid rgba(0, 0, 0, .15);
+                border-width: 1px 0;
+                box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+              }
+
+            /* Hide scrollbar for IE, Edge and Firefox */
+            body {
+              -ms-overflow-style: none;  /* IE and Edge */
+              scrollbar-width: none;  /* Firefox */
+              font-family: 'Nanum Gothic';
+            }
+            
+            p.title {
+                font-size: 3rem;
+                text-align: center;
+            }
+            p.description {
+                font-size: 1.5rem;
+                line-height: 200%;
+            }
+            .predict_button {
+                font-size: 2rem;
+                background: #3399ff;
+                color: white;
+            }
+            .predict_button:hover {
+                background: #3399ff;
+                color: #cccccc;
+            }
+            .result_view {
+                font-size: 2rem;
+            }            
+            button.tab {
+                color: #666666;
+                width: 100px;
+                
+            }
+            .tab.active {
+                background: #3399ff !important;
+            }
+            img {
+                max-width: 100%; 
+                height: auto;
+            }
+        </STYLE>
+    </HEAD>
+    <BODY>
+        <SCRIPT src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></SCRIPT>
+        <DIV class="container d-flex w-100 h-100 mx-auto flex-column">
+        <!-- <DIV class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column"> -->
+            <NAV class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+				<div class="container">
+					<a class="navbar-brand" href="#">SUM팀</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">홈</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/detail.html">상세보기</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</NAV>
+
+            <div class="container p-5" style="text-align:center;">
+                <div>
+                    <p class="title p-5">타이틀</p>
+                    <p class="description">설명이 어쩌구 저쩌구...설명이 어쩌구 저쩌구...설명이 어쩌구 저쩌구...<br>설명이 어쩌구 저쩌구...설명이 어쩌구 저쩌구...<br>설명이 어쩌구 저쩌구...설명이 어쩌구 저쩌구...설명이 어쩌구 저쩌구...<br>설명이 어쩌구 저쩌구...</p>
+                </div>
+                <div class="col-md-4 offset-md-4 p-5">
+                    <div class="row">
+                        <button class="btn predict_button" type="button" onclick="predict()">
+                            <div id="spinner" style="display : none">
+                                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                                  로딩중
+                            </div>
+                            결과예측
+                        </button>
+                        <div id="result_view" class="result p-5 result_view">
+                            
+                        </div>
+                </div>
+                </div>
+            </div>
+        </DIV>
+        <div class="b-example-divider"></div>
+        <DIV class="container d-flex w-100 h-100 mx-auto flex-column">
+            <div class="container px-4 py-5 mw-100 mh-100" id="featured-3">
+                <p class="title">파워포인트</p>
+                <div class="d-flex align-items-start mw-100 mh-100">
+                    <div class="nav flex-column nav-pills me-3 px-lg-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      <button class="tab nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">소개</button>
+                      <button class="tab nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">목적</button>
+                      <button class="tab nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">방향</button>
+                      <button class="tab nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">결론</button>
+                    </div>
+                    <div class="tab-content" id="v-pills-tabContent mw-100 mh-100">
+                      <div class="tab-pane fade show active mw-100 mh-100" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <div>
+                            <img src="https://dummyimage.com/1280x720/3399ff/000">
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <div>
+                            <img src="https://dummyimage.com/1280x720/3399ff/f00">
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                        <div>
+                            <img src="https://dummyimage.com/1280x720/3399ff/0f0">
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                        <div>
+                            <img src="https://dummyimage.com/1280x720/fff/00f">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </DIV>
+        <div class="b-example-divider"></div>
+        <DIV class="container d-flex w-100 h-100 mx-auto flex-column">
+            <div class="container px-4 py-5 mw-100 mh-100" id="featured-3">
+                <p class="title">팀 소개</p>
+            </div>
+            <div class="container d-flex row justify-content: space-around">
+                <div class="col col-3 mx-auto">
+                    <div class="card">
+                        <img src="images/profile/seoyoon.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">장서윤</h5>
+                            <p class="card-text">파이썬 개쩔어요</p>
+                            <a href="#" class="btn btn-primary">개인 링크</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-3 mx-auto">
+                    <div class="card">
+                        <img src="images/profile/bella.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">정이슬</h5>
+                            <p class="card-text">백엔드 전문이랍니당?</p>
+                            <a href="#" class="btn btn-primary">개인 링크</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-3 mx-auto">
+                    <div class="card">
+                        <img src="images/profile/seungjoo.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">김승주</h5>
+                            <p class="card-text">난 멋져~ 난 예뻐~</p>
+                            <a href="#" class="btn btn-primary">개인 링크</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-3 mx-auto">
+                    <div class="card">
+                        <img src="images/profile/yeob.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">김종엽</h5>
+                            <p class="card-text">내가 세상에서 제일 귀여워</p>
+                            <a href="#" class="btn btn-primary">개인 링크</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </DIV>
+        
+        <script>
+            function showSpinner(isShow) {
+                var show_word = "none";
+                if (isShow == true) {
+                    show_word = "inline-block";
+                }
+                document.getElementById('spinner').style.display = show_word;
+            }
+            function isLoading() {
+                const status = document.getElementById('spinner').style.display;
+                if (status == "inline-block") {
+                    return true
+                }
+                return false
+            }
+                            
+            function setResult(value) {
+                document.getElementById('result_view').innerHTML = value;
+            }
+            function showResult(value) {
+                if (value.length == 0) {
+                    setResult("");
+                    return
+                }
+                
+                if (isNaN(value)) {
+                    setResult(value);
+                } else {
+                    setResult(value ? "강아지" : "고양이");
+                }
+                
+            }
+
+            function predict() {
+                if (isLoading() == true) {
+                    return
+                }
+                showSpinner(true);
+                showResult("");
+                const formData = new FormData();
+                
+                formData.append('file', fileInput.files[0]);
+                formData.append("filename", fileInput.filename);
+                fetch('http://joannechang.pythonanywhere.com/predict', {
+                    method: 'GET',
+                    body: formData,
+                    headers: {
+                        "origin": 'localhost',
+                      },
+                })
+                .then((response) => response.json())
+                .then((result) => {
+                    console.log('성공:', result);
+                    showSpinner(false);
+                    if (result["result"] != "Error") {
+                        showResult(result["result"]);
+                    } else {
+                        showResult(result["description"]);
+                    }
+                    
+                    
+                })
+                .catch((error) => {
+                    console.error('실패:', error);
+                    showSpinner(false);
+                    showResult(null);
+                });
+            }
+        </script>
+
+    </BODY>
+</HTML>
