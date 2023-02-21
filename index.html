@@ -208,16 +208,13 @@
             function setResult(value) {
                 document.getElementById('result_view').innerHTML = value;
             }
-            function showResult(value) {
-        	setResult(value);
-            }
 
             function predict() {
                 if (isLoading() == true) {
                     return
                 }
                 showSpinner(true);
-                showResult("");
+                setResult("");
                 
                 fetch('https://joannechang.pythonanywhere.com/predict', {
                     method: 'GET',
@@ -229,18 +226,12 @@
                 .then((result) => {
                     console.log('성공:', result);
                     showSpinner(false);
-                    if (result["result"] != "Error") {
-                        showResult(result["result"]);
-                    } else {
-                        showResult(result["description"]);
-                    }
-                    
-                    
+                    setResult(result);
                 })
                 .catch((error) => {
                     console.error('실패:', error);
                     showSpinner(false);
-                    showResult(null);
+                    setResult("");
                 });
             }
         </script>
