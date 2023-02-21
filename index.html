@@ -230,11 +230,8 @@
                 showResult("");
                 const formData = new FormData();
                 
-                formData.append('file', fileInput.files[0]);
-                formData.append("filename", fileInput.filename);
                 fetch('http://joannechang.pythonanywhere.com/predict', {
                     method: 'GET',
-                    body: formData,
                     headers: {
                         "origin": 'localhost',
                       },
