@@ -209,17 +209,7 @@
                 document.getElementById('result_view').innerHTML = value;
             }
             function showResult(value) {
-                if (value.length == 0) {
-                    setResult("");
-                    return
-                }
-                
-                if (isNaN(value)) {
-                    setResult(value);
-                } else {
-                    setResult(value ? "강아지" : "고양이");
-                }
-                
+        	setResult(value);
             }
 
             function predict() {
