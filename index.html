@@ -97,7 +97,7 @@
                             </div>
                             결과예측
                         </button>
-			<p class="description"> 24시간 뒤 종로구 미세먼지 농도 </p>
+		     <p class="description"> 24시간 뒤 종로구 미세먼지 농도 </p>
                         <div id="result_view" class="result p-5 result_view">
                             
                         </div>
@@ -112,46 +112,140 @@
                 <div class="d-flex align-items-start mw-100 mh-100">
                     <div class="nav flex-column nav-pills me-3 px-lg-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                       <button class="tab nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">표지</button>
-		      <button class="tab nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">소개</button>
-		      <button class="tab nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">목표</button>
-		      <button class="tab nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">데이터</button>
-		      <button class="tab nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">상관관계</button>
-		      <button class="tab nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">베이스모델</button>
-		      <button class="tab nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">머신러닝1</button>
-		      <button class="tab nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">머신러닝2</button>
-		      <button class="tab nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">딥러닝1</button>
-		      <button class="tab nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">딥러닝2</button>
-                      <button class="tab nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">딥러닝3</button>
-                      <button class="tab nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">결과1</button>
-                      <button class="tab nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">결과2</button>
-		      <button class="tab nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">결과3</button>
-		      <button class="tab nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">결론1</button>
-		      <button class="tab nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">결론2</button>
-		      <button class="tab nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">결론3</button>
-		      <button class="tab nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">결론4</button>
-		      <button class="tab nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">결론5</button>			    
+		      <button class="tab nav-link" id="v-pills-intro-tab" data-bs-toggle="pill" data-bs-target="#v-pills-intro" type="button" role="tab" aria-controls="v-pills-intro" aria-selected="false">소개</button>
+		      <button class="tab nav-link" id="v-pills-goal-tab" data-bs-toggle="pill" data-bs-target="#v-pills-goal" type="button" role="tab" aria-controls="v-pills-goal" aria-selected="false">목표</button>
+		      <button class="tab nav-link" id="v-pills-data-tab" data-bs-toggle="pill" data-bs-target="#v-pills-data" type="button" role="tab" aria-controls="v-pills-data" aria-selected="false">데이터</button>
+		      <button class="tab nav-link" id="v-pills-corr-tab" data-bs-toggle="pill" data-bs-target="#v-pills-corr" type="button" role="tab" aria-controls="v-pills-corr" aria-selected="false">상관관계</button>
+		      <button class="tab nav-link" id="v-pills-basemodel-tab" data-bs-toggle="pill" data-bs-target="#v-pills-basemodel" type="button" role="tab" aria-controls="v-pills-basemodel" aria-selected="false">베이스모델</button>
+		      <button class="tab nav-link" id="v-pills-ml1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ml1" type="button" role="tab" aria-controls="v-pills-ml1" aria-selected="false">머신러닝1</button>
+		      <button class="tab nav-link" id="v-pills-ml2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-ml2" type="button" role="tab" aria-controls="v-pills-ml2" aria-selected="false">머신러닝2</button>
+		      <button class="tab nav-link" id="v-pills-dl1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dl1" type="button" role="tab" aria-controls="v-pills-dl1" aria-selected="false">딥러닝1</button>
+		      <button class="tab nav-link" id="v-pills-dl2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dl2" type="button" role="tab" aria-controls="v-pills-dl2" aria-selected="false">딥러닝2</button>
+                      <button class="tab nav-link" id="v-pills-dl3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dl3" type="button" role="tab" aria-controls="v-pills-dl3" aria-selected="false">딥러닝3</button>
+                      <button class="tab nav-link" id="v-pills-result1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-result1" type="button" role="tab" aria-controls="v-pills-result1" aria-selected="false">결과1</button>
+                      <button class="tab nav-link" id="v-pills-result2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-result2" type="button" role="tab" aria-controls="v-pills-result2" aria-selected="false">결과2</button>
+		      <button class="tab nav-link" id="v-pills-result3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-result3" type="button" role="tab" aria-controls="v-pills-result3" aria-selected="false">결과3</button>
+		      <button class="tab nav-link" id="v-pills-conclustion1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-conclusion1" type="button" role="tab" aria-controls="v-pills-conclusion1" aria-selected="false">결론1</button>
+		      <button class="tab nav-link" id="v-pills-conclusion2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-conclusion2" type="button" role="tab" aria-controls="v-pills-conclusion2" aria-selected="false">결론2</button>
+		      <button class="tab nav-link" id="v-pills-conclusion3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-conclusion3" type="button" role="tab" aria-controls="v-pills-conclusion3" aria-selected="false">결론3</button>
+		      <button class="tab nav-link" id="v-pills-conclusion4-tab" data-bs-toggle="pill" data-bs-target="#v-pills-conclusion4" type="button" role="tab" aria-controls="v-pills-conclusion4" aria-selected="false">결론4</button>
+		      <button class="tab nav-link" id="v-pills-conclusion5-tab" data-bs-toggle="pill" data-bs-target="#v-pills-conclusion5" type="button" role="tab" aria-controls="v-pills-conclusion5" aria-selected="false">결론5</button>			    
                     </div>
                     <div class="tab-content" id="v-pills-tabContent mw-100 mh-100">
                       <div class="tab-pane fade show active mw-100 mh-100" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <div>
+				![슬라이드1]
                             <img src="https://user-images.githubusercontent.com/122984361/220508922-8d4f7d8f-3bd2-48c4-a5eb-015baaa916f8.jpeg">
                         </div>
                       </div>
-                      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                      <div class="tab-pane fade" id="v-pills-intro" role="tabpanel" aria-labelledby="v-pills-intro-tab">
                         <div>
-                            <img src="https://dummyimage.com/1280x720/3399ff/f00">
+		            ![슬라이드6]
+                            <img src="https://user-images.githubusercontent.com/122984361/220688151-d38998dd-f396-4265-bb18-4d5cc51eea97.JPG">
                         </div>
                       </div>
-                      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                      <div class="tab-pane fade" id="v-pills-goal" role="tabpanel" aria-labelledby="v-pills-goal-tab">
                         <div>
-                            <img src="https://dummyimage.com/1280x720/3399ff/0f0">
+				![슬라이드8]
+                            <img src="https://user-images.githubusercontent.com/122984361/220679685-21872556-411b-46e0-8bd0-f09a07cf7f86.JPG)">
                         </div>
                       </div>
-                      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                      <div class="tab-pane fade" id="v-pills-data" role="tabpanel" aria-labelledby="v-pills-data-tab">
                         <div>
-                            <img src="https://dummyimage.com/1280x720/fff/00f">
+				![슬라이드13]
+                            <img src="https://user-images.githubusercontent.com/122984361/220688309-b6e02a8c-128c-4930-aabb-d413ba0bed3b.JPG">
                         </div>
                       </div>
+                      <div class="tab-pane fade" id="v-pills-corr" role="tabpanel" aria-labelledby="v-pills-corr-tab">
+                        <div>
+				![슬라이드18]
+                            <img src="https://user-images.githubusercontent.com/122984361/220688534-c269d857-5821-4a84-a338-1ef34dc10985.JPG">
+                        </div>
+		      </div>
+		      <div class="tab-pane fade" id="v-pills-basemodel" role="tabpanel" aria-labelledby="v-pills-basemodel-tab">
+                        <div>
+				![슬라이드32]
+                            <img src="https://user-images.githubusercontent.com/122984361/220688964-ab909ded-8ecb-42c2-bb09-65064fd2db24.JPG">
+                        </div>    
+                      </div>
+		      <div class="tab-pane fade" id="v-pills-ml1" role="tabpanel" aria-labelledby="v-pills-ml1-tab">
+                        <div>
+				![슬라이드33]
+                            <img src="https://user-images.githubusercontent.com/122984361/220689197-d93b70d0-750b-4721-a9cc-0be37a731b86.JPG">
+                        </div>    
+                      </div>
+		      <div class="tab-pane fade" id="v-pills-ml2" role="tabpanel" aria-labelledby="v-pills-ml2-tab">
+                        <div>
+				![슬라이드34]
+                            <img src="https://user-images.githubusercontent.com/122984361/220689490-7cdbe092-9ea3-430d-8486-d13ef98d75e2.JPG">
+                        </div>    
+                      </div>
+		      <div class="tab-pane fade" id="v-pills-dl1" role="tabpanel" aria-labelledby="v-pills-dl1-tab">
+                        <div>
+				![슬라이드35]
+                            <img src="https://user-images.githubusercontent.com/122984361/220689764-18c7e4d4-8d6e-4774-a55a-516611ead0df.JPG">
+                        </div>    
+                      </div>
+		      <div class="tab-pane fade" id="v-pills-dl2" role="tabpanel" aria-labelledby="v-pills-dl2-tab">
+                        <div>
+				![슬라이드36]
+                            <img src="https://user-images.githubusercontent.com/122984361/220689782-3f3c92c8-e30b-492e-93e5-59ae6e7e1dac.JPG">
+                        </div>    
+                      </div>
+		      <div class="tab-pane fade" id="v-pills-dl3" role="tabpanel" aria-labelledby="v-pills-dl3-tab">
+                        <div>
+				![슬라이드37]
+                            <img src="https://user-images.githubusercontent.com/122984361/220689807-37233cb6-985f-4317-8cee-f7719e754ebb.JPG">
+                        </div>    
+                      </div>
+		      <div class="tab-pane fade" id="v-pills-result1" role="tabpanel" aria-labelledby="v-pills-result1-tab">
+                        <div>
+				![슬라이드38]
+                            <img src="https://user-images.githubusercontent.com/122984361/220689858-1e88309a-0c12-449a-995c-f5289ffb5d18.JPG">
+                        </div>    
+                      </div>
+		      <div class="tab-pane fade" id="v-pills-result2" role="tabpanel" aria-labelledby="v-pills-result2-tab">
+                        <div>
+				![슬라이드39]
+                            <img src="https://user-images.githubusercontent.com/122984361/220689899-db1fa52f-62c0-462d-b686-dec17e84870e.JPG">
+                        </div>    
+                      </div>
+		      <div class="tab-pane fade" id="v-pills-result3" role="tabpanel" aria-labelledby="v-pills-result3-tab">
+                        <div>
+				![슬라이드40]
+                            <img src="https://user-images.githubusercontent.com/122984361/220689953-6265ef1c-7d2e-4f68-a663-d7bd0afa6ede.JPG">
+                        </div>    
+                      </div>
+		      <div class="tab-pane fade" id="v-pills-conclusion1" role="tabpanel" aria-labelledby="v-pills-conclusion1-tab">
+                        <div>
+				![슬라이드42]
+                            <img src="https://user-images.githubusercontent.com/122984361/220690391-6e0e4da3-1faf-4aea-9c23-226c6a0a8fa9.JPG">
+                        </div>    
+                      </div>
+		      <div class="tab-pane fade" id="v-pills-conclusion2" role="tabpanel" aria-labelledby="v-pills-conclusion2-tab">
+                        <div>
+				![슬라이드43]
+                            <img src="https://user-images.githubusercontent.com/122984361/220690414-9c1e974a-0bc0-456f-b77e-deb3610c21a3.JPG">
+                        </div>    
+                      </div>
+		      <div class="tab-pane fade" id="v-pills-conclusion3" role="tabpanel" aria-labelledby="v-pills-conclusion3-tab">
+                        <div>
+				![슬라이드44]
+                            <img src="https://user-images.githubusercontent.com/122984361/220690431-071b3ca0-4541-4ef0-8642-662ef181453b.JPG">
+                        </div>    
+                      </div>
+		      <div class="tab-pane fade" id="v-pills-conclusion4" role="tabpanel" aria-labelledby="v-pills-conclusion4-tab">
+                        <div>
+				![슬라이드45]
+                            <img src="https://user-images.githubusercontent.com/122984361/220690481-5c9f729d-9770-4aa2-bd45-f73aa1aca943.JPG">
+                        </div>    
+                      </div>
+		      <div class="tab-pane fade" id="v-pills-conclusion5" role="tabpanel" aria-labelledby="v-pills-conclusion5-tab">
+                        <div>
+				![슬라이드46]
+                            <img src="https://user-images.githubusercontent.com/122984361/220690543-985a6f33-861d-49b3-90ac-c65d44df7072.JPG">
+                        </div>    
+                      </div> 
                     </div>
                   </div>
             </div>
